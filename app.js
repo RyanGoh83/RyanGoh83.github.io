@@ -21,7 +21,7 @@ function getData(){
     .then(status)
     .then(json)
     .then(function(data) {
-        //console.log('Request succeeded with JSON response', data);
+        console.log('Request succeeded with JSON response', data);
         insertTable(data);
     })
     .catch(function(err) {
