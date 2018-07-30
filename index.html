@@ -13,12 +13,38 @@
 <body>
     <div class="container">
         <h1>Straits Times Index (STI) PE10 Stats</h1>
-        <p>Updated 1st of every month</p>
+        <p>Updated 1st trading day of every month</p>
         <div id="table-display">
 
         </div>   
-    </div>
-    <div class="container" id="table-display">
+        <br>
+        <hr>
+        <div id ="app-info">
+            <h3>Background</h3>
+
+            <p>I first read about the PE10 in Benjamin Graham's 'The Intelligent Investor' and through Robert Shiller's work on the Cyclically-Adjusted Price-to-Earnings Ratio for the S&amp;P 500. Unfortunately, I couldn't find one for the Straits Times Index (STI) so I decided to make one myself.</p>
+
+            <p>Some years ago, I found a dataset for the STI close at the start of the month and its corresponding PE ratio that goes back to 1993. Ever since then, I've been faithfully (ok, I've had my lapses) compiling data at the start of each month in an Excel file.</p>
+
+            <p>The data I get is from Bloomberg.</p>
+
+            <p>The relationship between PE10 and future returns is not perfect but so far, I've found that anything below a PE10 of 12.5x leads to future 5-year Compounded Annual Growth Rates (CAGR) of at least 6%.</p>
+
+            <p>You can check out all my blog posts on the STI's PE10. (<span><a href="https://ryangoh.wordpress.com/category/investing/pe10/" target="_blank">link here</a></span>)</p>
+            
+            <br><h3>Versions</h3>
+
+            <p>V 0.1 - Right now, it only displays the current PE10, average PE10 and median PE10 in a table.</p>
+
+            <br><h3>Future Updates</h3>
+
+            <ul>
+                <li>PE10 by date and corresponding 5-year CAGR.</li>
+                <li>Automatically scrape the data and update the files each month. Right now, it's still somewhat manual =(</li>
+            </ul>
+
+
+        </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
