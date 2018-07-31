@@ -38,7 +38,7 @@ function insertTable(res) {
     tableContent +=`
     <table class="table table-hover">
         <tr class="table-info">
-        <th scope="row">Updated on (MM-DD-YY):</th>
+        <th scope="row">Updated on (YYYY-MM-DD):</th>
         <td>${res[0].Date}</th>
         </tr>
         <tr>
