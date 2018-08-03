@@ -29,6 +29,23 @@
         </div>   
         <br>
         <hr>
+        <div id="chart-display">
+            <h1>PE10 Chart (historical)</h1>
+            <canvas id="myChart" width="1600" height="900">
+            </canvas>
+            <br>
+            <h3>Chart Details</h3>
+            <p>What I have here is the STI's PE10 (in blue and plotted on Y-axis on the left) versus the STI's close (in grey and plotted on the Y-Axis on the right).</p>
+                
+            <p>At a glance, it's fairly obvious that when the PE10 is low (below 15x), the market tends to run up fairly strongly. Based on this, it should be no surprise that 2017 was a good year as the PE10 fell from about 15x to roughly 11x from 2015 to early 2016.</p>
+
+            <p>Of course, in times of credit expansion, expensive can get more expensive. This was what we saw from 2003 when the PE10 was above 20x and it still ran all the way up to over 30x in 2007.</p>
+
+            <p>Once again, the PE10 shouldn't be used in isolation and forecasting for the near future. It should be viewed as a indicator that merely increases your chances of being right.</p>
+            
+        </div>   
+        <br>
+        <hr>
         <div id ="app-info">
             <h3>Background</h3>
 
@@ -45,6 +62,7 @@
             <br><h3>Versions</h3>
 
             <p>V 0.1 - Right now, it only displays the current PE10, average PE10 and median PE10 in a table.</p>
+            <p>V 0.2 (3 Aug 18)- Chart created to display PE10 vs. STI.</p>
 
             <br><h3>Future Updates</h3>
 
@@ -70,6 +88,7 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
     <script src="app.js"></script>
 </body>
 </html>

@@ -23,6 +23,7 @@ function getData(){
     .then(function(data) {
         console.log('Request succeeded with JSON response', data);
         insertTable(data);
+        displayChart(data);
     })
     .catch(function(err) {
         console.log('Fetch Error', err);
@@ -85,8 +86,66 @@ function calcMedian(res){
         vals.push(parseFloat(res[i].PE10));
     }
     vals.sort((a, b) => a - b);
-    var pivot = Math.floor(vals.length / 2);
+    let pivot = Math.floor(vals.length / 2);
     return vals.length % 2 ? vals[pivot] : (vals[pivot - 1] + vals[pivot]) / 2;
 }
 
 //displays chart
+function displayChart(data) {
+    let chartData = data.reverse();
+    //console.log(chartData);
+    let years = [];
+    let pe10Data = [];
+    let stiData = [];
+    for (i = 0; i < chartData.length; i++) {
+        years.push(chartData[i].Date);
+        pe10Data.push(parseFloat(chartData[i].PE10).toFixed(2));
+        stiData.push(parseFloat(chartData[i].StiClose).toFixed(2));
+    }
+    //console.log(years, pe10Data);
+    let lineChartData = {
+            labels: years,
+            datasets: [
+            { 
+                data: pe10Data,
+                label: "STI PE10 (monthly)",
+                borderColor:"#3e95cd",
+                backgroundColor: "#3e95cd",
+                fill: false,
+                yAxisID: 'y-axis-1'
+            },
+            { 
+                data: stiData,
+                label: "STI (monthly)",
+                borderColor:"#808080",
+                backgroundColor: "#808080",
+                fill: false,
+                yAxisID: 'y-axis-2'
+            }
+            ]
+        };
+    let ctx = document.getElementById("myChart").getContext('2d');
+    let myChart = new Chart(ctx, {
+        type: 'line',
+        data: lineChartData,
+        options: {
+            responsive: true,
+            hoverMode: 'index',
+            stacked: false,
+            scales: {
+                yAxes: [{
+                    type: 'linear',
+                    display: true,
+                    position: 'left',
+                    id: 'y-axis-1'
+                },
+                {
+                    type: 'linear',
+                    display: true,
+                    position: 'right',
+                    id: 'y-axis-2'
+                }]
+            }
+        }
+    });
+}
